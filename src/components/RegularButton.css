@@ -1,0 +1,23 @@
+.btn {
+    background-color: var(--light-primary);
+    color: var(--dark-primary);
+    font-family: inherit;
+    border: 2px solid var(--dark-primary);
+    border-radius: .5em;
+    cursor: pointer;
+}
+
+.btn--text {
+    background-color: var(--dark-primary);
+    color: var(--light-primary);
+    font-size: 1.25rem;
+    padding: .25em .75em;
+    margin: 0 auto;
+}
+
+.btn--text:hover,
+.btn--text:focus {
+    background-color: var(--light-primary);
+    color: var(--dark-primary);
+    box-shadow: 0 0 5px 1px var(--dark-primary);
+}

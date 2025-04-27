@@ -1,0 +1,37 @@
+{
+  "name": "guess-the-flag",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "codegen": "^0.1.0",
+    "express": "^5.1.0",
+    "html-entities": "2.6.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-toastify": "^11.0.5"
+  },
+  "devDependencies": {
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "keywords": [],
+  "author": "Ana Calatayud",
+  "license": "ISC",
+  "description": "To experiment with React and JS",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

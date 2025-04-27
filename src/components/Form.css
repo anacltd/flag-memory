@@ -1,0 +1,36 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    text-align: start;
+}
+
+form {
+    font-size: 1.125rem;
+    padding: 1em;
+    border-radius: .5em;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+
+select {
+    background-color: var(--dark-primary);
+    color: var(--light-primary);
+    font-family: inherit;
+    padding: .5em;
+    border: 1px solid var(--dark-primary);
+    border-radius: .5em;
+    cursor: pointer;
+}
+
+select:hover,
+select:focus {
+    background-color: var(--light-primary);
+    color: var(--dark-primary);
+    box-shadow: 0 0 2px 1px var(--dark-primary);
+}

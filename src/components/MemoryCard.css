@@ -1,0 +1,102 @@
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .btn--emoji {
+        font-size: clamp(1rem, 3vw, 2rem);
+    }
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1em;
+    width: 100%;
+    max-width: 1000px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.card-item {
+    list-style: none;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+}
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 125px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+}
+
+.card-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    z-index: 2;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+.matched {
+    box-shadow: 0 0 20px 20px var(--accent);
+}
+
+
+.btn--emoji {
+    width: 100%;
+    height: 125px;
+    border-radius: 20px;
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.5em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 2px solid var(--light-primary);
+    background-color: var(--light-primary);
+    color: var(--dark-primary);
+}
+
+.btn--emoji--capital {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.btn--emoji--flag {
+    font-size: clamp(5rem, 2vw, 1.25rem);
+}
+
+.match-key {
+    font-size: clamp(0.5rem, 2vw, 1.25rem);
+}
+
+.card-inner {
+    border-radius: 20px;
+}
+
+.card-inner.matched {
+    border: 4px solid green;
+}
+
+.card-face {
+    border: none;
+}
+
+.card-inner.matched .card-back {
+    border: none;
+}
