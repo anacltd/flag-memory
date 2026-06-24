@@ -31,12 +31,19 @@ export default function App() {
 
     async function startGame(count) {
         try {
-            const response = await fetch('https://restcountries.com/v3.1/all');
+            const response = await fetch(
+              `https://api.restcountries.com/countries/v5?limit=${count}`,
+              {
+                headers: {
+                  'Authorization': `Bearer ${process.env.REACT_APP_REST_COUNTRY}`
+                }
+              }
+            );
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
             const data = await response.json();
-            const dataSample = getRandomItems(data, count);
+            const dataSample = getRandomItems(data.data.objects, count);
             const emojisArray = getEmojisArray(dataSample)
             setEmojisData(emojisArray)
 
@@ -54,19 +61,22 @@ export default function App() {
 
     function getEmojisArray(data) {
         const cards = [];
-
         data.forEach((country) => {
-        cards.push({
-            type: 'flag',
-            value: country.flag,
-            matchKey: country.name.common,
-        });
+            cards.push(
+                {
+                    type: 'flag',
+                    value: country.flag.emoji,
+                    matchKey: country.names.common,
+                }
+            );
 
-        cards.push({
-            type: 'capital',
-            value: country.capital[0],
-            matchKey: country.name.common,
-        });
+            cards.push(
+                {
+                    type: 'capital',
+                    value: country.capitals[0].name,
+                    matchKey: country.names.common,
+                }
+            );
         });
 
         for (let i = cards.length - 1; i > 0; i--) {
